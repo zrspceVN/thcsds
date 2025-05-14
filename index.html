@@ -15,19 +15,21 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
-      color: white;
+      background: linear-gradient(135deg, #e0f7ff, #b3e5fc);
+      color: #023047;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      position: relative;
       overflow: hidden;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
+      text-shadow: 0 0 8px rgba(0, 153, 255, 0.3);
       opacity: 0;
       transform: translateY(-20px);
       animation: fadeInUp 1s ease-out forwards 0.5s;
@@ -42,23 +44,23 @@
     }
 
     a.button {
-      background-color: #7289da;
+      background: linear-gradient(135deg, #0288d1, #00bcd4);
       color: white;
       padding: 15px 30px;
-      border-radius: 30px;
+      border-radius: 40px;
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: bold;
-      box-shadow: 0 0 15px rgba(114, 137, 218, 0.5);
-      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+      transition: all 0.4s ease;
       opacity: 0;
       animation: fadeInUp 1s ease-out forwards 1.5s;
     }
 
     a.button:hover {
-      background-color: #5b6eae;
-      box-shadow: 0 0 25px rgba(114, 137, 218, 0.8);
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #00acc1, #4dd0e1);
+      box-shadow: 0 0 30px rgba(0, 172, 193, 0.9);
+      transform: scale(1.08);
     }
 
     @keyframes fadeInUp {
@@ -68,45 +70,38 @@
       }
     }
 
-    /* Glowing background particles */
-    .glow {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .circle {
+    /* Animated bubbles */
+    .bubble {
       position: absolute;
       border-radius: 50%;
-      background: rgba(114, 137, 218, 0.1);
-      box-shadow: 0 0 30px rgba(114, 137, 218, 0.3);
-      animation: float 10s infinite ease-in-out;
+      background: rgba(0, 188, 212, 0.2);
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+      animation: float 8s infinite ease-in-out;
+      pointer-events: none;
     }
 
-    .circle:nth-child(1) {
-      width: 100px;
-      height: 100px;
+    .bubble:nth-child(1) {
+      width: 120px;
+      height: 120px;
       top: 20%;
-      left: 10%;
+      left: 15%;
+      animation-delay: 0s;
     }
 
-    .circle:nth-child(2) {
-      width: 150px;
-      height: 150px;
-      top: 70%;
-      left: 70%;
-    }
-
-    .circle:nth-child(3) {
+    .bubble:nth-child(2) {
       width: 80px;
       height: 80px;
+      top: 70%;
+      left: 70%;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(3) {
+      width: 100px;
+      height: 100px;
       top: 50%;
       left: 40%;
+      animation-delay: 4s;
     }
 
     @keyframes float {
@@ -114,31 +109,29 @@
         transform: translateY(0) scale(1);
       }
       50% {
-        transform: translateY(-20px) scale(1.1);
+        transform: translateY(-30px) scale(1.1);
       }
     }
 
     .logo {
-     width: 120px;
-     height: auto;
-     margin-bottom: 20px;
-     animation: fadeInUp 1s ease-out forwards 0.2s;
-     opacity: 0;
-     transform: translateY(-10px);
-     border-radius: 50%;
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out forwards 0.2s;
+      opacity: 0;
+      transform: translateY(-10px);
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
     }
 
   </style>
 </head>
 <body>
-  <div class="glow">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
 
   <img src="logo.png" alt="Logo Trường" class="logo" />
-
   <h1>Chào mừng đến với Discord Trường THCS Thị trấn Tuần Giáo</h1>
   <p>Tham gia ngay để học hành, tám chuyện và cập nhật thông tin mới nhất!</p>
   <a href="https://discord.gg/Y9PQ7zqUUT" class="button" target="_blank">Vào Server Ngay</a>
